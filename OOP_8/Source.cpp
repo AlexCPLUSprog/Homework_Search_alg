@@ -1,10 +1,9 @@
 #include <iostream>
 #include <map>
-#include <string>
 #include <vector>
 #include <unordered_map>
 #include <utility>
-#include <tuple>
+
 
 
 class DataManager { // создаем класс ДатаМенеджер
@@ -33,63 +32,11 @@ private:	// в прайвате создаем вектор интов под названием "_keys"
 	std::vector<int> _keys = { 1,1,2,2,4,2,6,7,7,7,2 };
 };
 
-int divide(int a, int b) {
-	if (b == 0) {
-		throw "division by zero";
-	}
-	return a / b;
-}
-
-int errorFunc() {
-	throw 0;
-	return 1;
-}
 
 int main() {
 
-	// тапл включается библиотекой <tuple>, может есть в <utility>
-	/*std::tuple<int, std::string, double, float> t{1, "hey", 2.4, 2.3f};	// тапл как пара, но принимает больше двух значений
-	const auto& [a, b, c, d] = t;
-	std::cout << a << " " << b << " " << c << " " << d << '\n';
-
-	std::cout << std::get<0>(t) << '\n';	// обращение к 0 элементу через функцию std::get
-
-	std::vector <std::tuple<int, double, std::string>> vec;
-	vec.push_back({ 55, 5.4, "bob" });
-	vec.push_back({ 98, 6.8, "Alex" });
-
-	for (size_t i = 0; i < vec.size(); i++) {
-		const auto& [x, y, z] = vec[i];
-		std::cout << x << " " << y << " " << z << '\n';
-	}*/
-
 	DataManager dm;		// создаем переменную
 	std::cout << dm.mostSearchedKey() << '\n';	// используем функцию
-
-	// try...catch
-	/*int x = 10, y = 0;
-	try {
-		errorFunc() << '\n';
-		std::cout << divide(x, y) << '\n';
-	}
-	catch (const char* msg) {
-		std::cerr << msg << '\n';	// дискриптор cerr как дискриптор cout, но более заточен под ошибки
-	}
-	catch (int e) {
-		std::cerr << e << '\n';
-	}
-
-	catch(...){	// catch all
-		std::cerr << "Some exception has occured" << '\n';
-	}*/
-
-	/*std::vector<int> v{ 1,2,3 };
-	try {
-		int z = v.at(10);
-	}
-	catch (const std::out_of_range& e) {
-		std::cerr << e.what() << '\n';
-	}*/
 
 }
 
